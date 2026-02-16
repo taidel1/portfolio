@@ -97,9 +97,27 @@
       color: #666;
       text-align: center;
     }
+
+    .back-to-top {
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background-color: #0A3D62;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border: 1px solid #0A3D62;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .back-to-top:hover {
+    background-color: #ffffff;
+    color: #0A3D62;
+  }
   </style>
 </head>
-<body>
+<body id="top">
   <header>
     <h1>AI-Powered Financial Assistant for Young Professionals</h1>
     <p>A hybrid system that combines a multi-sheet financial tracker with AI-powered coaching to help young professionals budget, save, and start investing confidently.</p>
@@ -208,10 +226,13 @@
       </div>
     </div>
 
-    <p class="footer-note">
+<p class="footer-note">
+      <a href="#top" class="back-to-top">Back to top ↑</a><br />
       Note: This system is for educational and self-help purposes only and does not constitute financial, legal, or tax advice.
     </p>
   </div>
 </body>
 </html>
+
+
 
