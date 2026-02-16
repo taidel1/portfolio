@@ -5,12 +5,33 @@
   <title>AI-Powered Financial Assistant for Young Professionals</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    
+    :root {
+      --bg-color: #f7f9fb;
+      --text-color: #222222;
+      --card-bg: #ffffff;
+      --accent-main: #0A3D62;
+      --accent-secondary: #1e90ff;
+      --pill-bg: #f0f4ff;
+      --footer-text: #666666;
+    }
+    
+    body.dark-mode {
+      --bg-color: #111827;
+      --text-color: #f9fafb;
+      --card-bg: #1f2933;
+      --accent-main: #38bdf8;
+      --accent-secondary: #0ea5e9;
+      --pill-bg: #0b1120;
+      --footer-text: #9ca3af;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f7f9fb;
-      color: #222;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       scroll-behavior: smooth; /* smooth scroll for anchor links */
     }
 
@@ -24,7 +45,7 @@
       gap: 20px;
       padding: 8px 20px;
       margin-top: 15px;
-      background: linear-gradient(135deg, #0A3D62, #1e90ff);
+      background: linear-gradient(135deg, var(--accent-main), var(--accent-secondary));
       flex-wrap: wrap;
     }
     .navbar a {
@@ -42,7 +63,7 @@
     }
 
     header {
-      background: linear-gradient(135deg, #0A3D62, #1e90ff);
+      background: linear-gradient(135deg, var(--accent-main), var(--accent-secondary));
       color: #fff;
       padding: 30px 20px 30px;
       text-align: center;
@@ -74,7 +95,7 @@
       margin-top: 15px;
     }
     .section {
-      background-color: #ffffff;
+      background-color: var(--card-bg);
       border-radius: 8px;
       padding: 20px;
       margin-top: 20px;
@@ -85,7 +106,7 @@
     }
     .pill-list span {
       display: inline-block;
-      background: #f0f4ff;
+      background: var(--pill-bg);
       border-radius: 999px;
       padding: 4px 10px;
       margin: 3px;
@@ -94,7 +115,7 @@
     .footer-note {
       margin-top: 40px;
       font-size: 0.85rem;
-      color: #666;
+      color: var(--footer-text);
       text-align: center;
     }
 
@@ -115,13 +136,32 @@
     background-color: #ffffff;
     color: #0A3D62;
   }
+
+  .theme-toggle {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: transparent;
+    color: #ffffff;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .theme-toggle:hover {
+    background-color: #ffffff;
+    color: var(--accent-main);
+  }
+    
   </style>
 </head>
 <body id="top">
   <header>
     <h1>AI-Powered Financial Assistant for Young Professionals</h1>
     <p>A hybrid system that combines a multi-sheet financial tracker with AI-powered coaching to help young professionals budget, save, and start investing confidently.</p>
-
+    <button id="theme-toggle" class="theme-toggle">🌙 Dark mode</button>
+    
     <!-- NAVBAR -->
     <nav class="navbar">
       <a href="#overview">Overview</a>
@@ -231,8 +271,32 @@
       Note: This system is for educational and self-help purposes only and does not constitute financial, legal, or tax advice.
     </p>
   </div>
+
+<script>
+  const toggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Optional: persist theme using localStorage
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+    toggleButton.textContent = '☀️ Light mode';
+  }
+
+  toggleButton.addEventListener('click', () => {
+    const isDark = body.classList.toggle('dark-mode');
+    if (isDark) {
+      toggleButton.textContent = '☀️ Light mode';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      toggleButton.textContent = '🌙 Dark mode';
+      localStorage.setItem('theme', 'light');
+    }
+  });
+</script>
 </body>
 </html>
+
 
 
 
