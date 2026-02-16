@@ -11,11 +11,36 @@
       padding: 0;
       background-color: #f7f9fb;
       color: #222;
+      scroll-behavior: smooth; /* smooth scroll for anchor links */
     }
+
+    /* --- NAVBAR --- */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 20px 0;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .navbar a {
+      color: #e1efff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      transition: background 0.2s, color 0.2s;
+    }
+    .navbar a:hover {
+      background-color: #ffffff;
+      color: #0A3D62;
+    }
+
     header {
       background: linear-gradient(135deg, #0A3D62, #1e90ff);
       color: #fff;
-      padding: 40px 20px;
+      padding: 30px 20px 30px;
       text-align: center;
     }
     header h1 {
@@ -23,12 +48,13 @@
       font-size: 2.2rem;
     }
     header p {
-      margin: 0;
+      margin: 5px 0 10px;
       font-size: 1rem;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
     }
+
     .container {
       max-width: 960px;
       margin: 0 auto;
@@ -37,6 +63,10 @@
     h2 {
       color: #0A3D62;
       margin-top: 30px;
+    }
+    h3 {
+      color: #0A3D62;
+      margin-top: 15px;
     }
     .section {
       background-color: #ffffff;
@@ -68,21 +98,33 @@
   <header>
     <h1>AI-Powered Financial Assistant for Young Professionals</h1>
     <p>A hybrid system that combines a multi-sheet financial tracker with AI-powered coaching to help young professionals budget, save, and start investing confidently.</p>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <a href="#overview">Overview</a>
+      <a href="#problem">Problem</a>
+      <a href="#solution">Solution</a>
+      <a href="#features">Features</a>
+      <a href="#role">My Role</a>
+      <a href="#process">Process</a>
+      <a href="#outcomes">Outcomes</a>
+      <a href="#skills">Skills</a>
+    </nav>
   </header>
 
   <div class="container">
-    <div class="section">
+    <div class="section" id="overview">
       <h2>Project Overview</h2>
       <p>This project is a complete AI-powered financial assistant designed for early-career professionals. It blends structured financial tracking (via Excel/Google Sheets) with a curated AI prompt library that turns any AI model (e.g., Copilot, ChatGPT) into a personal finance coach.</p>
       <div class="pill-list">
-        <span>AI & Prompt Engineering</span>
+        <span>AI &amp; Prompt Engineering</span>
         <span>Data Modeling</span>
         <span>Product Design</span>
         <span>Personal Finance</span>
       </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="problem">
       <h2>The Problem</h2>
       <p>Young professionals often struggle with:</p>
       <ul>
@@ -95,17 +137,17 @@
       <p>Existing spreadsheets and apps are often static and lack personalized guidance or coaching.</p>
     </div>
 
-    <div class="section">
+    <div class="section" id="solution">
       <h2>The Solution</h2>
       <p>The AI-Powered Financial Assistant is a three-part system:</p>
       <ul>
         <li><strong>Finance Tracker Workbook:</strong> Multi-sheet Excel/Sheets file with Income, Expenses, Budget, Goals, Investments, and Dashboard views.</li>
         <li><strong>AI Prompt Library:</strong> A collection of structured prompts that turn an AI model into a financial coach.</li>
-        <li><strong>Guide & Case Study:</strong> Documentation that explains how to set up, use, and adapt the system.</li>
+        <li><strong>Guide &amp; Case Study:</strong> Documentation that explains how to set up, use, and adapt the system.</li>
       </ul>
     </div>
 
-    <div class="section">
+    <div class="section" id="features">
       <h2>Key Features</h2>
       <ul>
         <li>Automated KPIs: total income, total expenses, net savings, savings rate</li>
@@ -117,8 +159,8 @@
       </ul>
     </div>
 
-    <div class="section">
-      <h2>My Role & Responsibilities</h2>
+    <div class="section" id="role">
+      <h2>My Role &amp; Responsibilities</h2>
       <ul>
         <li>Defined the problem and user persona (young professionals 22–35)</li>
         <li>Designed the multi-sheet financial data model</li>
@@ -128,9 +170,9 @@
       </ul>
     </div>
 
-    <div class="section">
+    <div class="section" id="process">
       <h2>Process</h2>
-      <h3>1. Research & Requirements</h3>
+      <h3>1. Research &amp; Requirements</h3>
       <p>Identified common financial struggles of young professionals and requirements for a system that is both easy to start and sustainable long-term.</p>
       <h3>2. System Design</h3>
       <p>Designed the workbook structure (Income, Expenses, Budget, Goals, Investments, Dashboard) and defined KPIs for savings and investing capacity.</p>
@@ -140,8 +182,8 @@
       <p>Built a guide that walks users through setup and ongoing routines, plus this case study to explain the project to hiring managers or clients.</p>
     </div>
 
-    <div class="section">
-      <h2>Outcomes & Impact</h2>
+    <div class="section" id="outcomes">
+      <h2>Outcomes &amp; Impact</h2>
       <ul>
         <li>Users gain clear visibility into spending and savings behavior.</li>
         <li>Budget recommendations adapt based on real data and goals.</li>
@@ -150,13 +192,13 @@
       </ul>
     </div>
 
-    <div class="section">
+    <div class="section" id="skills">
       <h2>Skills Demonstrated</h2>
       <div class="pill-list">
         <span>Prompt Engineering</span>
         <span>Excel / Google Sheets Modeling</span>
-        <span>Data Visualization & KPIs</span>
-        <span>Product & UX Thinking</span>
+        <span>Data Visualization &amp; KPIs</span>
+        <span>Product &amp; UX Thinking</span>
         <span>Technical Documentation</span>
       </div>
     </div>
